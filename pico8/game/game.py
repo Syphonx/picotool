@@ -716,9 +716,8 @@ class Game():
         """
         file_args = {'mode':'wb+'}
         with tempfile.TemporaryFile(**file_args) as outfh:
-		
-			# This export was broken
-			#
+            # This export was broken
+            #
             # if filename.endswith('.png'):
                 # if kwargs.get('label_fname', None) is None:
                     # if os.path.exists(filename):
@@ -727,9 +726,9 @@ class Game():
             # else:
                 # self.to_p8_file(outfh, *args, **kwargs)
             
-			# This fixes the export
-			self.to_p8_file(outfh, *args, **kwargs)
-			outfh.seek(0)
+            # This fixes the export
+            self.to_p8_file(outfh, *args, **kwargs)
+            outfh.seek(0)
             with open(filename, **file_args) as finalfh:
                 finalfh.write(outfh.read())
 
